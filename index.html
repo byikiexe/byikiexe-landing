@@ -1,237 +1,794 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>byiki.exe — Soluciones web claras y mantenibles</title>
-  <meta
-    name="description"
-    content="byiki.exe desarrolla soluciones web claras, mantenibles y orientadas a resolver problemas reales sin complejidad innecesaria."
-  />
+  <meta name="description"
+    content="byiki.exe desarrolla soluciones web claras, mantenibles y orientadas a resolver problemas reales sin complejidad innecesaria." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
   <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Sora:wght@100..800&display=swap"
-    rel="stylesheet"
-  >
-  <link rel="stylesheet" href="style.css">
+    href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+
+  <link rel="stylesheet" href="assets/css/tokens.css">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/layout.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/products.css">
+  <link rel="stylesheet" href="assets/css/services.css">
+  <link rel="stylesheet" href="assets/css/about.css">
+  <link rel="stylesheet" href="assets/css/experiments.css">
+  <link rel="stylesheet" href="assets/css/contact.css">
+  <link rel="stylesheet" href="assets/css/footer.css">
+  <link rel="stylesheet" href="assets/css/hero.css">
+
 </head>
+
 <body>
   <div class="page">
+
+
     <header class="site-header">
       <div class="container nav">
-        <a href="#top" class="brand">byiki<span class="brand-highlight">.exe</span></a>
-        <nav class="nav-links" aria-label="Navegación principal">
+
+        <a href="#top" class="brand" aria-label="byiki.exe — Inicio">
+          byiki<span class="brand-highlight">.exe</span>
+        </a>
+
+        <button class="nav-toggle" type="button" aria-label="Abrir menú" aria-expanded="false"
+          aria-controls="main-navigation">
+          <span></span>
+          <span></span>
+        </button>
+
+        <nav id="main-navigation" class="nav-links">
+
+          <a href="#productos">Productos</a>
+
+          <a href="#experimentos">Experimentos</a>
+
           <a href="#servicios">Servicios</a>
-          <a href="#proceso">Proceso</a>
-          <a href="#lineas">Líneas de trabajo</a>         
-          <a href="#contacto">Contacto</a>
+
+          <a href="#sobre">Sobre byiki.exe</a>
+
+          <a href="#contacto" class="nav-cta">
+            Contacto ↗
+          </a>
+
         </nav>
+
       </div>
     </header>
 
+
+
     <main id="top">
-      <section class="hero">
-        <div class="container hero-grid">
-          <div class="hero-copy">
-            <p class="eyebrow lema">Claridad + solución + tecnología</p>
-            <h1>La tecnología debe resolver, no complicar.</h1>
-            <p>
-              byiki<span class="brand-highlight">.exe</span> diseña y desarrolla soluciones web
-              claras, mantenibles y orientadas a necesidades reales.
-              Cada proyecto parte de entender el problema, definir una estructura sólida
-              y construir una solución que pueda explicarse.
-            </p>
-            <div class="hero-actions">
-              <a class="button" id="boton-acento" href="#contacto">Hablemos</a>
-              <a class="button-secondary" href="#lineas">Ver líneas</a>
-            </div>
-          </div>
-          <aside class="hero-note">
-            Disponible para colaboraciones freelance en desarrollo web,
-            backend, prototipos funcionales y soluciones digitales con una base clara y útil.
-          </aside>
-        </div>
-      </section>
 
-      <section id="servicios">
-        <div class="container section-grid">
-          <div class="section-title">
-            <p class="eyebrow">01</p>
-            <h2>Servicios</h2>
-          </div>
-          <div class="section-content stack">
-            <div class="areas-list">
-              <div class="list-item">
-                <strong>Desarrollo web</strong>
-                <p>
-                  Sitios y aplicaciones web pensados para funcionar con claridad,
-                  rendimiento y una estructura sólida.
-                </p>
-              </div>
-              <div class="list-item">
-                <strong>Backend</strong>
-                <p>
-                  Lógica, arquitectura e integraciones para sistemas que necesitan orden,
-                  mantenimiento y capacidad de evolución.
-                </p>
-              </div>
-              <div class="list-item">
-                <strong>Interfaces</strong>
-                <p>
-                  Diseño de interfaces claras y coherentes, centradas en facilitar el uso
-                  y mejorar la comprensión del producto.
-                </p>
-              </div>
-              <div class="list-item">
-                <strong>Prototipos</strong>
-                <p>
-                  Primeras versiones funcionales para validar ideas, aterrizar necesidades
-                  y convertir un problema en una solución concreta.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="container hero-container">
 
-      <section id="proceso">
-        <div class="container section-grid">
-          <div class="section-title">
-            <p class="eyebrow">02</p>
-            <h2>Proceso</h2>
-          </div>
-          <div class="section-content stack">
-            <p>
-              No entiendo el desarrollo como una acumulación de herramientas ni como una
-              capa de complejidad añadida. Un proyecto funciona mejor cuando la solución
-              es clara, la base técnica está bien planteada y cada decisión tiene sentido.
-            </p>
-            <p>
-              Trabajo desde una lógica práctica: entender la necesidad, ordenar la estructura
-              y construir una solución útil, mantenible y bien explicada.
-            </p>
-            <div class="quote-block">
-              <p>Tres principios del mismo proceso.</p>
-            </div>
-            <div class="three-columns" aria-label="Pilares de trabajo">
-              <div>
-                <span>01</span>
-                <strong>Claridad</strong>
-              </div>
-              <div>
-                <span>02</span>
-                <strong>Solución</strong>
-              </div>
-              <div>
-                <span>03</span>
-                <strong>Estructura</strong>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+          <div class="hero-meta">
+            <span class="system-status">
+              <span class="status-dot" aria-hidden="true"></span>
+              System online
+            </span>
 
-      <section id="lineas">
-        <div class="container section-grid">
-          <div class="section-title">
-            <p class="eyebrow">03</p>
-            <h2>Líneas de trabajo</h2>
+            <span>EST. 2026</span>
           </div>
-          <div class="section-content stack">
-            <div class="projects-list">
-              <article class="project">
-                <strong>Sistemas web</strong>
-                <p>
-                  Soluciones digitales pensadas para organizar procesos, mejorar flujos de trabajo
-                  y sostenerse en el tiempo sin complejidad innecesaria.
-                </p>
-              </article>
-              <article class="project">
-                <strong>Backend</strong>
-                <p>
-                  Estructura técnica, lógica e integraciones para construir sistemas claros,
-                  mantenibles y preparados para crecer con una base sólida.
-                </p>
-              </article>
-              <article class="project">
-                <strong>Diseño de producto</strong>
-                <p>
-                  Interfaces y prototipos que ayudan a convertir necesidades complejas
-                  en experiencias más simples, comprensibles y coherentes.
-                </p>
-              </article>
-            </div>
-          </div>
-        </div>
-      </section>
 
-      <section id="contacto">
-        <div class="container section-grid">
-          <div class="section-title">
-            <p class="eyebrow">04</p>
-            <h2>Contacto</h2>
-          </div>
-          <div class="section-content stack">
-            <div class="contact-card">
-              <p>
-                Si necesitas una solución web clara, una base técnica sólida o una primera
-                versión funcional de tu proyecto, puedes escribirme.
-              </p>
-              <p>
-                Trabajo en colaboraciones freelance y proyectos seleccionados donde la claridad,
-                la estructura y la utilidad importan.
+          <div class="hero-grid">
+
+            <div class="hero-copy">
+
+              <p class="hero-label">
+                [ Independent Software Studio ]
               </p>
 
-              <form id="contact-form" action="https://formspree.io/f/xdawkgrg" method="post">
-                <input type="hidden" name="_subject" value="Nuevo mensaje desde byiki.exe">                
-                <input type="hidden" name="_template" value="table">
-                
-                <input type="text" name="_gotcha" style="display:none">
+              <h1 id="hero-title">
+                La tecnología<br>
+                debe resolver,<br>
+                <span class="hero-highlight">no complicar.</span>
+              </h1>
 
-                <div class="field">
-                  <label for="name">Nombre</label>
-                  <input id="name" name="name" type="text" placeholder="Tu nombre" />
-                </div>
+              <p class="hero-description">
+                Desarrollo de software, herramientas open source
+                y productos digitales. Soluciones útiles,
+                mantenibles y diseñadas con propósito.
+              </p>
 
-                <div class="field">
-                  <label for="email">Email</label>
-                  <input id="email" name="email" type="email" placeholder="tu@email.com" />
-                </div>
+              <div class="hero-actions">
+                <a class="btn btn-primary" href="#productos">
+                  Explorar proyectos
+                  <span aria-hidden="true">↗</span>
+                </a>
 
-                <div class="field">
-                  <label for="message">Mensaje</label>
-                  <textarea id="message" name="message" placeholder="Cuéntame brevemente qué necesitas"></textarea>
-                </div>
-
-                <button class="button" id="boton-acento" type="submit">Enviar mensaje</button>
-                <p id="form-status" class="form-status"></p>
-
-                <p class="contact-note">
-                    Respuesta habitual en 24-48 horas.
-                </p>
-              </form>
-
-              <div class="contact-meta">
-                <a href="mailto:contacto@byikiexe.com">contacto@byikiexe.com</a>
-                <p>
-                  Desarrollo web, backend, prototipos funcionales y soluciones digitales con un enfoque claro y mantenible.
-                </p>
+                <a class="btn btn-secondary" href="#contacto">
+                  Hablemos
+                </a>
               </div>
+
             </div>
+
+            <aside class="hero-terminal" aria-label="Áreas de desarrollo">
+
+              <div class="terminal-header">
+                <div class="terminal-controls" aria-hidden="true">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </div>
+
+                <span>studio.config</span>
+              </div>
+
+              <div class="terminal-body">
+
+                <p class="terminal-comment">// What I build</p>
+
+                <ul class="terminal-list">
+                  <li>
+                    <span>01.</span>
+                    Software engineering
+                  </li>
+                  <li>
+                    <span>02.</span>
+                    Open-source tools
+                  </li>
+                  <li>
+                    <span>03.</span>
+                    Infrastructure &amp; automation
+                  </li>
+                </ul>
+
+                <p class="terminal-status">
+                  <span class="terminal-cursor" aria-hidden="true">_</span>
+                  ready to build
+                </p>
+
+              </div>
+
+            </aside>
+
+          </div>
+
+          <div class="hero-footer">
+            <a href="#productos" class="scroll-indicator">
+              Scroll to explore
+              <span aria-hidden="true">↓</span>
+            </a>
+
+            <span>BUILD / 002</span>
+          </div>
+
+        </div>
+      </section>
+
+
+      <section id="productos" class="products-section" aria-labelledby="products-title">
+
+        <div class="container">
+
+          <div class="products-header">
+
+            <div class="products-meta">
+              <span>01 / Software &amp; Products</span>
+              <span>[ 02 Projects ]</span>
+            </div>
+
+            <h2 id="products-title">
+              Software con propósito<span>.</span>
+            </h2>
+
+            <p class="products-description">
+              Herramientas independientes que nacen
+              de problemas reales, la curiosidad
+              y las ganas de construir algo útil.
+            </p>
+
+          </div>
+
+
+          <div class="products-grid">
+
+            <!-- VESTIGIA -->
+            <article class="product-card">
+
+              <div class="product-preview product-preview--vestigia">
+
+                <img src="assets/images/products/vestigia/preview.png"
+                  alt="Interfaz del analizador de salud de Vestigia" loading="lazy" width="1200" height="800">
+
+              </div>
+
+              <div class="product-content">
+
+                <span class="product-category">
+                  Obsidian Plugin
+                </span>
+
+                <h3 class="product-name">Vestigia</h3>
+
+                <p class="product-description">
+                  Analiza la salud estructural de tu vault de
+                  Obsidian. Detecta enlaces rotos, notas huérfanas
+                  y problemas de organización.
+                </p>
+
+                <ul class="product-tags" aria-label="Tecnologías">
+                  <li>TypeScript</li>
+                  <li>Obsidian API</li>
+                  <li>Open Source</li>
+                </ul>
+
+
+                <div class="product-footer">
+
+                  <span class="product-status product-status--available">
+                    <span class="product-status-dot" aria-hidden="true"></span>
+                    Disponible
+                  </span>
+
+                  <div class="product-links">
+
+                    <a href="https://community.obsidian.md/plugins/vestigia"
+                      class="product-external-link product-external-link--primary" target="_blank"
+                      rel="noopener noreferrer" aria-label="Vestigia en Obsidian">
+                      Obsidian
+                      <span aria-hidden="true">↗</span>
+                    </a>
+
+                    <a href="https://github.com/byikiexe/vestigia" class="product-external-link" target="_blank"
+                      rel="noopener noreferrer" aria-label="Repositorio de Vestigia en GitHub">
+                      GitHub
+                      <span aria-hidden="true">↗</span>
+                    </a>
+
+                    <a href="https://hub.xerj.org/contributors/byikiexe" class="product-external-link" target="_blank"
+                      rel="noopener noreferrer" aria-label="Perfil de contribuciones en XERJ">
+                      XERJ
+                      <span aria-hidden="true">↗</span>
+                    </a>
+
+                  </div>
+
+                </div>
+
+
+              </div>
+
+            </article>
+
+            <!-- GINSENG -->
+            <article class="product-card">
+
+              <div class="product-preview product-preview--ginseng">
+
+                <img src="assets/images/products/ginseng/preview.png"
+                  alt="Interfaz de la aplicación de escritorio Ginseng" loading="lazy" width="1200" height="800">
+              </div>
+              <div class="product-content">
+                <span class="product-category">
+                  Desktop Application
+                </span>
+                <h3 class="product-name">Ginseng</h3>
+                <p class="product-description">
+                  Una utilidad de escritorio ligera para evitar
+                  el bloqueo automático por inactividad y mantener
+                  tu equipo activo cuando lo necesites.
+                </p>
+                <ul class="product-tags" aria-label="Tecnologías y licencia">
+                  <li>Tauri</li>
+                  <li>Rust</li>
+                  <li>Vue</li>
+                  <li>TypeScript</li>
+                  <li>Proprietary</li>
+                </ul>
+                <div class="product-footer">
+                  <div class="product-status-group">
+                    <span class="product-status product-status--available">
+                      <span class="product-status-dot" aria-hidden="true"></span>
+                      Disponible
+                    </span>
+                    <span class="product-status product-status--review">
+                      <span class="product-status-dot" aria-hidden="true"></span>
+                      Snap Store en revisión
+                    </span>
+                  </div>
+                  <div class="product-links">
+                    <a href="https://github.com/byikiexe/ginseng-releases/releases/latest"
+                      class="product-external-link product-external-link--primary" target="_blank"
+                      rel="noopener noreferrer">
+                      Descargar para Linux
+                      <span aria-hidden="true">↗</span>
+                    </a>
+                    <a href="https://github.com/byikiexe/ginseng-releases/blob/main/CHANGELOG.md"
+                      class="product-external-link" target="_blank" rel="noopener noreferrer">
+                      Changelog
+                      <span aria-hidden="true">↗</span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </article>
           </div>
         </div>
       </section>
+
+
+      <section id="experimentos" class="experiments-section" aria-labelledby="experiments-title">
+
+        <div class="container">
+
+          <div class="experiments-header">
+
+            <div class="experiments-meta">
+              <span>02 / Creative Experiments</span>
+              <span>[ 01 Experiment ]</span>
+            </div>
+
+            <h2 id="experiments-title">
+              Explorando lo inesperado<span>.</span>
+            </h2>
+
+            <p class="experiments-description">
+              Un espacio de experimentación en la
+              intersección entre código, diseño
+              y creatividad.
+            </p>
+
+          </div>
+
+          <div class="experiments-grid">
+            <!-- AURA -->
+            <article class="experiment-card">
+              <div class="experiment-preview">
+                <img src="assets/images/experiments/aura/preview.png"
+                  alt="Composición visual generativa creada con Aura" loading="lazy" width="1200" height="800">
+              </div>
+              <div class="experiment-content">
+                <span class="experiment-index">
+                  Experiment / 001
+                </span>
+                <span class="product-category">
+                  Generative Art
+                </span>
+                <h3 class="experiment-name">Aura</h3>
+                <p class="experiment-description">
+                  Un experimento de arte generativo
+                  que transforma palabras en composiciones
+                  visuales deterministas. Una exploración
+                  de la relación entre lenguaje,
+                  algoritmos y expresión visual.
+                </p>
+                <ul class="product-tags" aria-label="Áreas de experimentación">
+                  <li>Creative Coding</li>
+                  <li>Generative Art</li>
+                  <li>Algorithms</li>
+                </ul>
+
+                <div class="product-footer">
+                  <span class="product-status product-status--available">
+                    <span class="product-status-dot" aria-hidden="true"></span>
+                    Disponible
+                  </span>
+                  <div class="product-links">
+                    <a href="https://aura.byikiexe.com/" class="product-external-link product-external-link--primary"
+                      target="_blank" rel="noopener noreferrer"> Experimentar
+                      <span aria-hidden="true">↗</span>
+                    </a>
+                    <a href="https://github.com/byikiexe/aura-experiment" class="product-external-link" target="_blank"
+                      rel="noopener noreferrer">
+                      GitHub
+                      <span aria-hidden="true">↗</span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+
+
+      <section id="servicios" class="services-section" aria-labelledby="services-title">
+
+        <div class="container">
+
+          <div class="services-header">
+
+            <div class="services-meta">
+              <span>03 / Technical Services</span>
+              <span>[ 04 Capabilities ]</span>
+            </div>
+
+            <h2 id="services-title">
+              Del código a la infraestructura<span>.</span>
+            </h2>
+
+            <p class="services-description">
+              Soluciones técnicas diseñadas para funcionar,
+              evolucionar y mantenerse en el tiempo.
+            </p>
+
+          </div>
+
+          <div class="capabilities-grid">
+
+            <!-- 01 / SOFTWARE ENGINEERING -->
+
+            <article class="capability-card">
+
+              <div class="capability-header">
+                <span class="capability-index">/ 01</span>
+                <span class="capability-symbol" aria-hidden="true">&lt;/&gt;</span>
+              </div>
+
+              <h3>Software Engineering</h3>
+
+              <p>
+                Desarrollo de aplicaciones web, herramientas
+                de escritorio y productos digitales.
+                Software funcional, mantenible y orientado
+                a necesidades reales.
+              </p>
+
+              <div class="capability-tags">
+                Web · Desktop · Software
+              </div>
+
+            </article>
+
+            <!-- 02 / BACKEND & INTEGRATIONS -->
+
+            <article class="capability-card">
+
+              <div class="capability-header">
+                <span class="capability-index">/ 02</span>
+                <span class="capability-symbol" aria-hidden="true">{ }</span>
+              </div>
+
+              <h3>Backend &amp; Integrations</h3>
+
+              <p>
+                Desarrollo de servicios backend, APIs,
+                gestión de bases de datos e integración
+                entre sistemas y aplicaciones.
+              </p>
+
+              <div class="capability-tags">
+                API · SQL · Backend
+              </div>
+
+            </article>
+
+            <!-- 03 / INFRASTRUCTURE & DEVOPS -->
+
+            <article class="capability-card">
+
+              <div class="capability-header">
+                <span class="capability-index">/ 03</span>
+                <span class="capability-symbol" aria-hidden="true">$_</span>
+              </div>
+
+              <h3>Infrastructure &amp; DevOps</h3>
+
+              <p>
+                Gestión de infraestructura Linux,
+                contenedores, entornos de ejecución,
+                despliegues y migraciones de aplicaciones.
+              </p>
+
+              <div class="capability-tags">
+                Linux · Docker · Operations
+              </div>
+
+            </article>
+
+            <!-- 04 / AUTOMATION & TOOLING -->
+
+            <article class="capability-card">
+
+              <div class="capability-header">
+                <span class="capability-index">/ 04</span>
+                <span class="capability-symbol" aria-hidden="true">[ * ]</span>
+              </div>
+
+              <h3>Automation &amp; Tooling</h3>
+
+              <p>
+                Automatización de procesos, scripting
+                y desarrollo de herramientas internas
+                para reducir tareas repetitivas y mejorar
+                los flujos de trabajo.
+              </p>
+
+              <div class="capability-tags">
+                Scripting · Tooling · Workflows
+              </div>
+
+            </article>
+
+          </div>
+
+          <div class="services-footer">
+
+            <p>
+              ¿Tienes un proyecto o un problema técnico
+              que resolver?
+            </p>
+
+            <a href="#contacto" class="btn btn-secondary">
+              Hablemos
+              <span aria-hidden="true">↗</span>
+            </a>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+      <section id="sobre" class="about-section" aria-labelledby="about-title">
+
+        <div class="container">
+
+          <div class="about-meta">
+            <span>04 / About the Studio</span>
+            <span>[ Independent by Design ]</span>
+          </div>
+
+          <div class="about-grid">
+
+            <div class="about-heading">
+
+              <h2 id="about-title">
+                Curiosidad como origen.
+                <span>Código como medio.</span>
+              </h2>
+
+              <p class="about-label">
+                Design × Engineering × Curiosity
+              </p>
+
+            </div>
+
+            <div class="about-copy">
+
+              <p class="about-intro">
+                <strong>byiki.exe</strong> es un estudio
+                independiente de desarrollo de software
+                y experimentación digital.
+              </p>
+
+              <p>
+                Un espacio donde la ingeniería de software,
+                la infraestructura y el diseño se encuentran
+                para dar forma a herramientas, productos
+                e ideas.
+              </p>
+
+              <p>
+                Construir, aprender, cuestionar y mejorar.
+                Entender la tecnología no solo como una
+                herramienta, sino como un medio de creación.
+              </p>
+
+              <p>
+                Detrás de byiki.exe hay una desarrolladora
+                con una visión multidisciplinar de la
+                tecnología y una curiosidad constante
+                por descubrir nuevas formas de construir.
+              </p>
+
+            </div>
+
+          </div>
+
+          <div class="about-principles">
+
+            <article class="about-principle">
+              <span class="principle-index">/ 01</span>
+              <h3>Independence</h3>
+              <p>
+                Libertad para explorar, experimentar
+                y construir ideas propias.
+              </p>
+            </article>
+
+            <article class="about-principle">
+              <span class="principle-index">/ 02</span>
+              <h3>Purpose</h3>
+              <p>
+                Tecnología con una razón de ser.
+                Funcionalidad antes que complejidad.
+              </p>
+            </article>
+
+            <article class="about-principle">
+              <span class="principle-index">/ 03</span>
+              <h3>Evolution</h3>
+              <p>
+                Aprendizaje constante, iteración
+                y mejora continua.
+              </p>
+            </article>
+
+          </div>
+
+          <div class="about-footer">
+            <span>Est. 2026 / Spain</span>
+            <span class="about-status">Always building_</span>
+          </div>
+
+        </div>
+
+      </section>
+
+
+
+      
+<section id="contacto"
+         class="contact-section"
+         aria-labelledby="contact-title">
+
+    <div class="container">
+
+        <div class="contact-meta">
+            <span>05 / Contact</span>
+            <span>[ Open Channel ]</span>
+        </div>
+
+        <div class="contact-grid">
+
+            <div class="contact-heading">
+
+                <h2 id="contact-title">
+                    Let's talk<span>.</span>
+                </h2>
+
+                <p>
+                    Para proyectos, colaboraciones o cualquier
+                    idea que quieras explorar.
+                </p>
+
+            </div>
+
+            <div class="contact-details">
+
+                <div class="contact-direct">
+
+                    <span class="contact-label">
+                        Email / Direct
+                    </span>
+
+                    <a href="mailto:contacto@byikiexe.com"
+                       class="contact-email">
+
+                        <span>contacto@byikiexe.com</span>
+                        <span aria-hidden="true">↗</span>
+
+                    </a>
+
+                </div>
+
+                <div class="contact-socials">
+
+                    <span class="contact-label">
+                        Elsewhere / Online
+                    </span>
+
+                    <div class="contact-social-links">
+
+                        <a href="https://github.com/byikiexe"
+                           target="_blank"
+                           rel="noopener noreferrer">
+                            GitHub ↗
+                        </a>
+
+                        <a href="https://www.instagram.com/vnuoli/"
+                           target="_blank"
+                           rel="noopener noreferrer">
+                            Instagram ↗
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
     </main>
 
-    <footer class="site-footer">
-      <div class="container footer-grid">
-        <p>byiki<span class="brand-highlight">.exe</span></p>
-        <p>Soluciones web claras</p>
-        <p>2026</p>
-      </div>
-    </footer>
+    
+<footer class="site-footer">
+
+    <div class="container">
+
+        <div class="footer-main">
+
+            <!-- Studio identity -->
+
+            <div class="footer-identity">
+
+                <a href="#top"
+                   class="brand"
+                   aria-label="byiki.exe — Inicio">
+                    byiki<span class="brand-highlight">.exe</span>
+                </a>
+
+                <p>Independent Software Studio</p>
+
+            </div>
+
+            <!-- System information -->
+
+            <div class="footer-system">
+
+                <span class="footer-status">
+                    <span class="footer-status-dot"
+                          aria-hidden="true"></span>
+                    System online
+                </span>
+
+                <span class="footer-build">
+                    Build / 002
+                </span>
+
+            </div>
+
+            <!-- Navigation and copyright -->
+
+            <div class="footer-navigation">
+
+                <a href="#top" class="footer-top">
+                    Back to top
+                    <span aria-hidden="true">↑</span>
+                </a>
+
+                <span class="footer-copyright">
+                    © 2026 byiki.exe
+                </span>
+
+            </div>
+
+        </div>
+
+        <!-- End of file -->
+
+        <div class="footer-bottom">
+
+            <span>
+                Designed &amp; developed by byiki.exe
+            </span>
+
+            <span class="footer-eof" aria-hidden="true">
+                EOF_
+            </span>
+
+        </div>
+
+    </div>
+
+</footer>
+
   </div>
-<script defer src="script.js"></script>
+  <script defer src="assets/js/navigation.js"></script>
 </body>
+
 </html>

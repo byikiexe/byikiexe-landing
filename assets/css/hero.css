@@ -1,0 +1,281 @@
+
+/* ==================================================
+   BYIKI.EXE — HERO
+   ================================================== */
+
+.hero {
+    position: relative;
+    display: flex;
+    align-items: center;
+    min-height: calc(100svh - var(--header-height));
+    padding-block: var(--space-6);
+    overflow: hidden;
+    border-bottom: 1px solid var(--color-border);
+
+    background-image:
+        linear-gradient(
+            rgba(255, 255, 255, 0.025) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(255, 255, 255, 0.025) 1px,
+            transparent 1px
+        );
+
+    background-size: 64px 64px;
+}
+
+.hero-container {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-6);
+}
+
+/* Metadata */
+
+.hero-meta,
+.hero-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-4);
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    color: var(--color-text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+}
+
+.hero-meta {
+    padding-bottom: var(--space-4);
+    border-bottom: 1px solid var(--color-border);
+}
+
+.system-status {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    color: var(--color-accent);
+}
+
+.status-dot {
+    width: 7px;
+    height: 7px;
+    flex-shrink: 0;
+    border-radius: var(--radius-full);
+    background-color: var(--color-accent);
+    box-shadow: 0 0 12px rgba(208, 255, 163, 0.35);
+}
+
+/* Main composition */
+
+.hero-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr);
+    align-items: center;
+    gap: var(--space-8);
+    padding-block: var(--space-5);
+}
+
+.hero-copy {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.hero-label {
+    margin-bottom: var(--space-5);
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    color: var(--color-text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+}
+
+.hero h1 {
+    font-family: var(--font-heading);
+    font-size: clamp(2.8rem, 5vw, 5rem);
+    font-weight: var(--font-semibold);
+    line-height: 1.05;
+    letter-spacing: -0.055em;
+}
+
+.hero-highlight {
+    color: var(--color-accent);
+}
+
+
+.hero-description {
+    max-width: 36rem;
+    margin-top: var(--space-5);
+    font-size: var(--text-lg);
+    line-height: 1.7;
+    color: var(--color-text-secondary);
+}
+
+.hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-3);
+    margin-top: var(--space-6);
+}
+
+/* Terminal */
+
+.hero-terminal {
+    min-width: 0;
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    font-family: var(--font-mono);
+}
+
+.terminal-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-3);
+    padding: var(--space-4);
+    border-bottom: 1px solid var(--color-border);
+    font-size: var(--text-xs);
+    color: var(--color-text-muted);
+}
+
+.terminal-controls {
+    display: flex;
+    gap: 6px;
+}
+
+.terminal-controls span {
+    width: 8px;
+    height: 8px;
+    border-radius: var(--radius-full);
+    background-color: var(--color-border);
+}
+
+.terminal-controls span:last-child {
+    background-color: var(--color-accent);
+}
+
+.terminal-body {
+    padding: var(--space-5);
+    font-size: var(--text-sm);
+    line-height: 1.8;
+}
+
+.terminal-comment {
+    color: var(--color-text-muted);
+    margin-bottom: var(--space-4);
+}
+
+.terminal-list {
+    display: grid;
+    gap: var(--space-3);
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    color: var(--color-accent-secondary);
+}
+
+.terminal-list li {
+    display: flex;
+    align-items: baseline;
+    gap: var(--space-2);
+}
+
+.terminal-list li span {
+    color: var(--color-text-muted);
+}
+
+.terminal-status {
+    margin-top: var(--space-6);
+    color: var(--color-accent);
+}
+
+.terminal-cursor {
+    animation: cursor-blink 1.2s step-end infinite;
+}
+
+@keyframes cursor-blink {
+    50% {
+        opacity: 0;
+    }
+}
+
+/* Footer metadata */
+
+.hero-footer {
+    padding-top: var(--space-4);
+    border-top: 1px solid var(--color-border);
+}
+
+.scroll-indicator {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    transition: color var(--transition-fast);
+}
+
+.scroll-indicator:hover {
+    color: var(--color-accent);
+}
+
+/* Responsive */
+
+@media (max-width: 1024px) {
+    .hero-grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-7);
+    }
+
+    .hero-terminal {
+        max-width: 560px;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero {
+        min-height: calc(100svh - 72px);
+    }
+}
+
+@media (max-width: 640px) {
+    .hero {
+        padding-block: var(--space-5);
+        background-size: 32px 32px;
+    }
+
+    .hero-container {
+        gap: var(--space-5);
+    }
+
+    .hero-grid {
+        padding-block: var(--space-5);
+        gap: var(--space-6);
+    }
+
+    .hero h1 {
+        font-size: clamp(2rem, 10.5vw, 3.5rem);
+        line-height: 1.05;
+    }
+
+    .hero-description {
+        font-size: var(--text-base);
+    }
+
+    .hero-label {
+        letter-spacing: 0.02em;
+    }
+
+    .terminal-body {
+        padding: var(--space-4);
+        font-size: var(--text-xs);
+    }
+
+    .hero-meta,
+    .hero-footer {
+        font-size: 0.65rem;
+    }
+}

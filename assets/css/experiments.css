@@ -1,0 +1,191 @@
+/* ==================================================
+   BYIKI.EXE — EXPERIMENTS
+   ================================================== */
+
+.experiments-section {
+    padding-block: var(--section-spacing);
+    border-bottom: 1px solid var(--color-border);
+}
+
+
+/* Section header */
+
+.experiments-header {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+    margin-bottom: var(--space-8);
+}
+
+.experiments-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--space-4);
+
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--color-text-muted);
+}
+
+.experiments-meta span:first-child {
+    color: var(--color-accent);
+}
+
+.experiments-header h2 {
+    font-family: var(--font-heading);
+    font-size: clamp(2rem, 4vw, 3.5rem);
+    font-weight: var(--font-semibold);
+    letter-spacing: -0.045em;
+}
+
+.experiments-header h2 span {
+    color: var(--color-accent);
+}
+
+.experiments-description {
+    max-width: 600px;
+    font-size: var(--text-lg);
+    color: var(--color-text-secondary);
+}
+
+
+/* Experiments grid */
+
+.experiments-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: var(--space-5);
+}
+
+
+/* Experiment card */
+
+.experiment-card {
+    display: grid;
+    grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+
+    overflow: hidden;
+
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+
+    transition: border-color var(--transition-base);
+}
+
+.experiment-card:hover,
+.experiment-card:focus-within {
+    border-color: var(--color-accent-secondary);
+}
+
+
+/* Experiment preview */
+
+.experiment-preview {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    min-width: 0;
+    overflow: hidden;
+
+    background: var(--color-bg);
+    border-right: 1px solid var(--color-border);
+}
+
+.experiment-preview img {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    aspect-ratio: 3 / 2;
+}
+
+/* Experiment content */
+
+.experiment-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: var(--space-4);
+
+    min-width: 0;
+    padding: var(--space-6);
+}
+
+.experiment-index {
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--color-text-muted);
+}
+
+.experiment-name {
+    font-family: var(--font-heading);
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: var(--font-semibold);
+    letter-spacing: -0.04em;
+}
+
+.experiment-description {
+    font-size: var(--text-base);
+    line-height: 1.7;
+    color: var(--color-text-secondary);
+}
+
+.experiment-content .product-footer {
+    margin-top: var(--space-3);
+}
+
+
+/* Responsive */
+
+@media (max-width: 1024px) {
+
+    .experiment-content {
+        padding: var(--space-5);
+    }
+
+}
+
+@media (max-width: 768px) {
+
+    .experiments-header {
+        margin-bottom: var(--space-6);
+    }
+
+    .experiments-description {
+        font-size: var(--text-base);
+    }
+
+    .experiment-card {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .experiment-preview {
+        aspect-ratio: 3 / 2;
+        border-right: 0;
+        border-bottom: 1px solid var(--color-border);
+    }
+
+}
+
+@media (max-width: 480px) {
+
+    .experiment-content {
+        padding: var(--space-4);
+    }
+
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    .experiment-card:hover .experiment-preview img {
+        transform: none;
+    }
+
+}

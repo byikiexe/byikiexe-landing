@@ -1,0 +1,233 @@
+/* ==================================================
+   BYIKI.EXE — COMPONENTS
+   ================================================== */
+
+
+/* Header */
+
+.site-header {
+    position: sticky;
+    top: 0;
+    z-index: var(--z-header);
+    background: rgba(9, 9, 11, 0.85);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-bottom: 1px solid var(--color-border);
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: var(--header-height);
+    gap: var(--space-6);
+}
+
+.brand {
+    display: inline-flex;
+    align-items: center;
+    flex-shrink: 0;
+    font-family: var(--font-heading);
+    font-size: var(--text-2xl);
+    font-weight: var(--font-bold);
+    letter-spacing: -0.06em;
+    line-height: 1;
+}
+
+.brand-highlight {
+    color: var(--color-accent);
+}
+
+
+
+/* Navigation */
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: var(--space-6);
+}
+
+.nav-links a {
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    font-weight: var(--font-medium);
+    color: var(--color-text-secondary);
+    transition: color var(--transition-fast);
+}
+
+.nav-links a:hover,
+.nav-links a:focus-visible {
+    color: var(--color-accent);
+}
+
+.nav-links .nav-cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-2);
+    min-height: 40px;
+    padding: var(--space-2) var(--space-4);
+    border: 1px solid var(--color-accent);
+    border-radius: var(--radius-sm);
+    color: var(--color-accent);
+    transition:
+        background-color var(--transition-fast),
+        color var(--transition-fast);
+}
+
+.nav-links .nav-cta:hover,
+.nav-links .nav-cta:focus-visible {
+    background-color: var(--color-accent);
+    color: var(--color-on-accent);
+}
+
+.nav-cta span {
+    font-size: var(--text-base);
+}
+
+
+/* Navigation — Toggle */
+
+.nav-toggle {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    background: transparent;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    color: var(--color-accent);
+    transition: border-color var(--transition-fast);
+}
+
+.nav-toggle:hover {
+    border-color: var(--color-accent);
+}
+
+.nav-toggle span {
+    display: block;
+    width: 20px;
+    height: 2px;
+    background-color: currentColor;
+    transition: transform var(--transition-base);
+}
+
+/* Navigation — Open state */
+
+.nav-toggle[aria-expanded="true"] span:first-child {
+    transform: translateY(4px) rotate(45deg);
+}
+
+.nav-toggle[aria-expanded="true"] span:last-child {
+    transform: translateY(-4px) rotate(-45deg);
+}
+
+/* Navigation — Responsive */
+
+@media (max-width: 768px) {
+
+    .nav {
+        min-height: 72px;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        padding-block: var(--space-3);
+    }
+
+    .nav-toggle {
+        display: flex;
+    }
+
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        padding: var(--space-4) var(--container-padding);
+        background-color: var(--color-bg);
+        border-bottom: 1px solid var(--color-border);
+    }
+
+    .nav-links.is-open {
+        display: flex;
+    }
+
+    .nav-links a {
+        padding-block: var(--space-4);
+        font-size: var(--text-sm);
+    }
+
+    .nav-links a:not(.nav-cta) {
+        border-bottom: 1px solid var(--color-border);
+    }
+
+    .nav-links .nav-cta {
+        margin-top: var(--space-4);
+        min-height: 44px;
+    }
+}
+
+
+/* Buttons */
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-3);
+    min-height: 48px;
+    padding: var(--space-3) var(--space-5);
+    border: 1px solid transparent;
+    border-radius: var(--radius-sm);
+    font-family: var(--font-mono);
+    font-size: var(--text-sm);
+    font-weight: var(--font-medium);
+    transition:
+        background-color var(--transition-fast),
+        border-color var(--transition-fast),
+        color var(--transition-fast);
+}
+
+.btn-primary {
+    background-color: var(--color-accent);
+    border-color: var(--color-accent);
+    color: var(--color-on-accent);
+}
+
+.btn-primary:hover {
+    background-color: var(--color-accent-hover);
+    border-color: var(--color-accent-hover);
+}
+
+.btn-secondary {
+    background: transparent;
+    color: var(--color-accent-secondary);
+    border: 1px solid var(--color-accent-secondary);
+}
+
+.btn-secondary:hover {
+    background: var(--color-accent-secondary);
+    color: var(--color-on-accent);
+}
+
+@media (max-width: 480px) {
+    .btn {
+        font-size: var(--text-xs);
+        padding-inline: var(--space-4);
+    }
+}
+
+/* Product cards */
+
+/* Status indicators */
+
+/* Forms */

@@ -1,0 +1,96 @@
+
+/* ==================================================
+   BYIKI.EXE — DESIGN TOKENS
+   Design System v2.0
+   ================================================== */
+
+:root {
+
+    /* Colors — Backgrounds */
+    --color-bg: #09090B;
+    --color-surface: #141418;
+    --color-surface-hover: #1C1C21;
+    --color-border: #29292F;
+
+    /* Colors — Typography */
+    --color-text: #F2F2F2;
+    --color-text-secondary: #A1A1AA;
+    --color-text-muted: #85858F;
+
+    /* Colors — Brand */
+    --color-accent: hsl(125, 90%, 68%);
+    --color-accent-hover: hsl(125, 90%, 60%);
+    --color-accent-secondary: hsl(320, 90%, 68%);
+    --color-accent-secondary-hover: hsl(320, 90%, 60%);
+    --color-on-accent: #09090B;
+
+    /* Colors — Brand gradient */
+    --gradient-brand: linear-gradient(
+        90deg,
+        var(--color-accent),
+        var(--color-accent-secondary)
+    );
+
+    /* Colors — Semantic */
+    --color-success: #86EFAC;
+    --color-warning: #FCD34D;
+    --color-error: #FCA5A5;
+
+    /* Typography — Families */
+    --font-heading: 'Space Grotesk', sans-serif;
+    --font-body: 'Inter', sans-serif;
+    --font-mono: 'IBM Plex Mono', monospace;
+
+    /* Typography — Sizes */
+    --text-xs: 0.75rem;
+    --text-sm: 0.875rem;
+    --text-base: 1rem;
+    --text-lg: 1.125rem;
+    --text-xl: 1.25rem;
+    --text-2xl: 1.5rem;
+    --text-3xl: 2rem;
+    --text-4xl: 2.5rem;
+    --text-hero: clamp(3rem, 7vw, 6rem);
+
+    /* Typography — Weights */
+    --font-regular: 400;
+    --font-medium: 500;
+    --font-semibold: 600;
+    --font-bold: 700;
+
+    /* Spacing */
+    --space-1: 0.25rem;
+    --space-2: 0.5rem;
+    --space-3: 0.75rem;
+    --space-4: 1rem;
+    --space-5: 1.5rem;
+    --space-6: 2rem;
+    --space-7: 3rem;
+    --space-8: 4rem;
+    --space-9: 6rem;
+    --space-10: 8rem;
+
+    /* Border radius */
+    --radius-sm: 4px;
+    --radius-md: 8px;
+    --radius-lg: 12px;
+    --radius-xl: 16px;
+    --radius-full: 9999px;
+
+    /* Layout */
+    --container-max: 1280px;
+    --container-padding: clamp(1.25rem, 4vw, 3rem);
+    --section-spacing: clamp(4rem, 8vw, 8rem);
+    --header-height: 80px;
+
+    /* Transitions */
+    --transition-fast: 150ms ease;
+    --transition-base: 250ms ease;
+    --transition-slow: 400ms ease;
+
+    /* Z-index */
+    --z-base: 1;
+    --z-header: 100;
+    --z-overlay: 200;
+    --z-modal: 300;
+}
