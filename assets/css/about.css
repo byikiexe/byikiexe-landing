@@ -1,0 +1,223 @@
+/* ==================================================
+   BYIKI.EXE — ABOUT
+   ================================================== */
+
+.about-section {
+    padding-block: var(--section-spacing);
+    border-bottom: 1px solid var(--color-border);
+}
+
+
+/* Section metadata */
+
+.about-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--space-4);
+
+    margin-bottom: var(--space-8);
+
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--color-text-muted);
+}
+
+.about-meta span:first-child {
+    color: var(--color-accent);
+}
+
+
+/* Editorial layout */
+
+.about-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+    align-items: start;
+    gap: var(--space-9);
+
+    padding-bottom: var(--space-8);
+}
+
+
+/* Heading */
+
+.about-heading {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-5);
+}
+
+.about-heading h2 {
+    font-family: var(--font-heading);
+    font-size: clamp(2.5rem, 4.5vw, 4.5rem);
+    font-weight: var(--font-semibold);
+    line-height: 1.08;
+    letter-spacing: -0.055em;
+}
+
+.about-heading h2 span {
+    display: block;
+    margin-top: var(--space-2);
+    color: var(--color-accent);
+}
+
+.about-label {
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--color-text-muted);
+}
+
+
+/* Editorial copy */
+
+.about-copy {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-5);
+}
+
+.about-copy p {
+    font-size: var(--text-base);
+    line-height: 1.8;
+    color: var(--color-text-secondary);
+}
+
+.about-copy .about-intro {
+    font-size: var(--text-xl);
+    line-height: 1.6;
+    color: var(--color-text);
+}
+
+.about-intro strong {
+    font-weight: var(--font-semibold);
+}
+
+
+/* Studio principles */
+
+.about-principles {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+
+    border-top: 1px solid var(--color-border);
+    border-bottom: 1px solid var(--color-border);
+}
+
+.about-principle {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+
+    padding: var(--space-6);
+    border-right: 1px solid var(--color-border);
+}
+
+.about-principle:first-child {
+    padding-left: 0;
+}
+
+.about-principle:last-child {
+    border-right: 0;
+    padding-right: 0;
+}
+
+.principle-index {
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    color: var(--color-accent-secondary);
+}
+
+.about-principle h3 {
+    font-family: var(--font-heading);
+    font-size: var(--text-xl);
+    font-weight: var(--font-semibold);
+}
+
+.about-principle p {
+    font-size: var(--text-sm);
+    line-height: 1.7;
+    color: var(--color-text-secondary);
+}
+
+
+/* Section footer */
+
+.about-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--space-4);
+
+    margin-top: var(--space-5);
+
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--color-text-muted);
+}
+
+.about-status {
+    color: var(--color-accent);
+}
+
+
+/* Responsive */
+
+@media (max-width: 1024px) {
+
+    .about-grid {
+        gap: var(--space-6);
+    }
+
+}
+
+@media (max-width: 768px) {
+
+    .about-meta {
+        margin-bottom: var(--space-6);
+    }
+
+    .about-grid {
+        grid-template-columns: minmax(0, 1fr);
+        gap: var(--space-6);
+        padding-bottom: var(--space-6);
+    }
+
+    .about-principles {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .about-principle {
+        padding: var(--space-5) 0;
+        border-right: 0;
+        border-bottom: 1px solid var(--color-border);
+    }
+
+    .about-principle:last-child {
+        border-bottom: 0;
+    }
+
+}
+
+@media (max-width: 480px) {
+
+    .about-meta,
+    .about-footer {
+        font-size: 0.65rem;
+    }
+
+    .about-heading h2 {
+        font-size: clamp(2rem, 9vw, 3rem);
+    }
+
+    .about-copy .about-intro {
+        font-size: var(--text-lg);
+    }
+
+}
