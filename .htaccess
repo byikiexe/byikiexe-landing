@@ -1,3 +1,45 @@
 RewriteEngine On
-RewriteCond %{HTTPS} off
-RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# Canonical origin. If TLS terminates at a proxy, verify HTTPS detection in staging.
+RewriteCond %{HTTPS} !=on [OR]
+RewriteCond %{HTTP_HOST} !^byikiexe\.com$ [NC]
+RewriteRule ^ https://byikiexe.com%{REQUEST_URI} [R=301,L]
+
+# Protect internal files while preserving the standard ACME challenge path.
+RewriteRule (^|/)\.(?!well-known(?:/|$)) - [R=404,L,NC]
+RewriteRule (^|/)(?:README\.md|[^/]+\.(?:bak|old|orig|swp))$ - [R=404,L,NC]
+
+# Prevent listings without relying on an Options override at the host.
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteCond %{REQUEST_FILENAME}/index.html !-f
+RewriteRule ^ - [R=404,L]
+
+ErrorDocument 404 /404.html
+
+<IfModule mod_headers.c>
+    # Hash of the homepage JSON-LD block, including its surrounding line breaks.
+    Header always set Content-Security-Policy "default-src 'none'; base-uri 'none'; object-src 'none'; frame-ancestors 'none'; form-action 'none'; script-src 'self' 'sha256-hPBpjIH3CYQCbCNPNZXEiQOu7dz69w1L0yVgNUSREXY='; style-src 'self'; img-src 'self'; font-src 'self'; manifest-src 'self'"
+    Header always set X-Content-Type-Options "nosniff"
+    Header always set Referrer-Policy "strict-origin-when-cross-origin"
+    Header always set Permissions-Policy "camera=(), microphone=(), geolocation=()"
+
+    <FilesMatch "\.(?:html|txt|xml|webmanifest)$">
+        Header set Cache-Control "no-cache"
+    </FilesMatch>
+    <FilesMatch "\.(?:css|js)$">
+        Header set Cache-Control "public, max-age=3600"
+    </FilesMatch>
+    <FilesMatch "\.(?:woff2|svg|ico|png|jpe?g|webp)$">
+        Header set Cache-Control "public, max-age=604800"
+    </FilesMatch>
+</IfModule>
+
+<IfModule mod_mime.c>
+    AddType application/manifest+json .webmanifest
+</IfModule>
+
+<IfModule mod_filter.c>
+    <IfModule mod_deflate.c>
+        AddOutputFilterByType DEFLATE text/html text/plain text/css text/javascript application/javascript application/xml text/xml application/manifest+json image/svg+xml
+    </IfModule>
+</IfModule>
