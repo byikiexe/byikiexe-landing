@@ -24,11 +24,24 @@
     --color-accent-secondary-hover: hsl(320, 90%, 60%);
     --color-on-accent: #09090B;
 
-    /* Colors — Brand gradient */
-    --gradient-brand: linear-gradient(
-        90deg,
-        var(--color-accent),
-        var(--color-accent-secondary)
+    /* Effects */
+    --glow-accent: color-mix(
+        in srgb,
+        var(--color-accent) 35%,
+        transparent
+    );
+
+    --color-grid-line: color-mix(
+        in srgb,
+        var(--color-text) 2.5%,
+        transparent
+    );
+    
+    /* Colors — Translucent surfaces */
+    --color-bg-translucent: color-mix(
+        in srgb,
+        var(--color-bg) 85%,
+        transparent
     );
 
     /* Colors — Semantic */

@@ -95,6 +95,8 @@
     border-bottom: 1px solid var(--color-border);
 }
 
+/* Product-specific brand surfaces */
+
 .product-preview--vestigia {
     background: #1C1629;
 }
