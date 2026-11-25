@@ -11,24 +11,8 @@
 /* Section metadata */
 
 .about-meta {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: var(--space-4);
-
     margin-bottom: var(--space-8);
-
-    font-family: var(--font-mono);
-    font-size: var(--text-xs);
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    color: var(--color-text-muted);
 }
-
-.about-meta span:first-child {
-    color: var(--color-accent);
-}
-
 
 /* Editorial layout */
 

@@ -8,28 +8,11 @@
     border-bottom: 1px solid var(--color-border);
 }
 
-
 /* Section metadata */
 
 .contact-meta {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: var(--space-4);
-
     margin-bottom: var(--space-7);
-
-    font-family: var(--font-mono);
-    font-size: var(--text-xs);
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    color: var(--color-text-muted);
 }
-
-.contact-meta span:first-child {
-    color: var(--color-accent);
-}
-
 
 /* Contact layout */
 
@@ -39,7 +22,6 @@
     align-items: center;
     gap: var(--space-8);
 }
-
 
 /* Heading */
 
