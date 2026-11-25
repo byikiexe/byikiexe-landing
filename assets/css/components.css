@@ -5,11 +5,26 @@
 
 /* Header */
 
+.skip-link {
+    position: fixed;
+    top: var(--space-4);
+    left: var(--container-padding);
+    z-index: calc(var(--z-header) + 1);
+    padding: var(--space-2) var(--space-4);
+    border-radius: var(--radius-sm);
+    background: var(--color-accent);
+    color: var(--color-on-accent);
+}
+
+.skip-link:not(:focus) {
+    clip-path: inset(50%);
+}
+
 .site-header {
     position: sticky;
     top: 0;
     z-index: var(--z-header);
-    background: rgba(9, 9, 11, 0.85);
+    background: var(--color-bg-translucent);
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
     border-bottom: 1px solid var(--color-border);
@@ -81,11 +96,6 @@
     background-color: var(--color-accent);
     color: var(--color-on-accent);
 }
-
-.nav-cta span {
-    font-size: var(--text-base);
-}
-
 
 /* Navigation — Toggle */
 
@@ -176,6 +186,187 @@
     }
 }
 
+/* Project cards */
+
+.project-card {
+    overflow: hidden;
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+}
+
+.project-card__preview {
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.project-card__preview img {
+    display: block;
+    width: 100%;
+    object-fit: contain;
+}
+
+.project-card__content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+}
+
+.project-card__name {
+    font-family: var(--font-heading);
+    font-weight: var(--font-semibold);
+    letter-spacing: -0.04em;
+}
+
+.project-card__description {
+    font-size: var(--text-base);
+    color: var(--color-text-secondary);
+}
+
+.project-card:hover,
+.project-card:focus-within {
+    border-color: var(--color-accent-secondary);
+}
+
+.project-card__category {
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--color-accent-secondary);
+}
+
+/* Project tags */
+
+.project-card__tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2);
+
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.project-card__tags li {
+    padding: var(--space-1) var(--space-2);
+
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    color: var(--color-text-secondary);
+}
+
+
+/* Project footer */
+
+.project-card__footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: var(--space-3);
+
+    margin-top: auto;
+    padding-top: var(--space-4);
+
+    border-top: 1px solid var(--color-border);
+}
+
+
+/* Project status */
+
+.project-card__status {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+}
+
+.project-card__status-dot {
+    width: 7px;
+    height: 7px;
+    flex-shrink: 0;
+
+    background: currentColor;
+    border-radius: var(--radius-full);
+}
+
+.project-card__status--available {
+    color: var(--color-success);
+}
+
+.project-card__status--review {
+    color: var(--color-warning);
+}
+
+/* Project external links */
+
+.project-card__links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2);
+    width: 100%;
+}
+
+.project-card__external-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-2);
+
+    min-height: 40px;
+    padding: var(--space-2) var(--space-3);
+
+    background: transparent;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    color: var(--color-text);
+
+    transition:
+        background-color var(--transition-fast),
+        border-color var(--transition-fast),
+        color var(--transition-fast);
+}
+
+.project-card__external-link:hover {
+    border-color: var(--color-accent-secondary);
+    color: var(--color-accent-secondary);
+}
+
+/* Primary external link */
+
+.project-card__external-link--primary {
+    background: var(--color-accent);
+    border-color: var(--color-accent);
+    color: var(--color-on-accent);
+}
+
+.project-card__external-link--primary:hover {
+    background: var(--color-accent-hover);
+    border-color: var(--color-accent-hover);
+    color: var(--color-on-accent);
+}
+
+/* Project status group */
+
+.project-card__status-group {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: var(--space-3);
+    width: 100%;
+}
+
 
 /* Buttons */
 
@@ -226,8 +417,71 @@
     }
 }
 
-/* Product cards */
+/* ==================================================
+   SECTION METADATA
+   ================================================== */
 
-/* Status indicators */
+.section-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: var(--space-4);
 
-/* Forms */
+    font-family: var(--font-mono);
+    font-size: var(--text-xs);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--color-text-muted);
+}
+
+.section-meta > span:first-child {
+    color: var(--color-accent);
+}
+
+@media (max-width: 480px) {
+    .section-meta {
+        font-size: 0.65rem;
+    }
+}
+
+/* ==================================================
+   SECTION HEADER
+   ================================================== */
+
+.section-header {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+    margin-bottom: var(--space-8);
+}
+
+.section-header h2 {
+    font-family: var(--font-heading);
+    font-size: clamp(2rem, 4vw, 3.5rem);
+    font-weight: var(--font-semibold);
+    letter-spacing: -0.045em;
+}
+
+.section-header h2 span {
+    color: var(--color-accent);
+}
+
+.section-header__description {
+    max-width: 600px;
+    font-size: var(--text-lg);
+    color: var(--color-text-secondary);
+}
+
+.section-header--wide .section-header__description {
+    max-width: 700px;
+}
+
+@media (max-width: 768px) {
+    .section-header {
+        margin-bottom: var(--space-6);
+    }
+
+    .section-header__description {
+        font-size: var(--text-base);
+    }
+}

@@ -2,11 +2,15 @@
 <html lang="es">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>byiki.exe — Soluciones web claras y mantenibles</title>
   <meta name="description"
-    content="byiki.exe desarrolla soluciones web claras, mantenibles y orientadas a resolver problemas reales sin complejidad innecesaria." />
+    content="byiki.exe desarrolla soluciones web claras, mantenibles y orientadas a resolver problemas reales sin complejidad innecesaria.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="byiki.exe — Soluciones web claras y mantenibles">
+  <meta property="og:description"
+    content="byiki.exe desarrolla soluciones web claras, mantenibles y orientadas a resolver problemas reales sin complejidad innecesaria.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
@@ -16,24 +20,26 @@
 
   <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
 
+  <!-- Design system -->
   <link rel="stylesheet" href="assets/css/tokens.css">
   <link rel="stylesheet" href="assets/css/base.css">
   <link rel="stylesheet" href="assets/css/layout.css">
   <link rel="stylesheet" href="assets/css/components.css">
-  <link rel="stylesheet" href="assets/css/style.css">
+
+  <!-- Page sections -->
+  <link rel="stylesheet" href="assets/css/hero.css">
   <link rel="stylesheet" href="assets/css/products.css">
+  <link rel="stylesheet" href="assets/css/experiments.css">
   <link rel="stylesheet" href="assets/css/services.css">
   <link rel="stylesheet" href="assets/css/about.css">
-  <link rel="stylesheet" href="assets/css/experiments.css">
   <link rel="stylesheet" href="assets/css/contact.css">
   <link rel="stylesheet" href="assets/css/footer.css">
-  <link rel="stylesheet" href="assets/css/hero.css">
 
 </head>
 
 <body>
   <div class="page">
-
+    <a class="skip-link" href="#top">Saltar al contenido principal</a>
 
     <header class="site-header">
       <div class="container nav">
@@ -48,7 +54,7 @@
           <span></span>
         </button>
 
-        <nav id="main-navigation" class="nav-links">
+        <nav id="main-navigation" class="nav-links" aria-label="Navegación principal">
 
           <a href="#productos">Productos</a>
 
@@ -58,7 +64,7 @@
 
           <a href="#sobre">Sobre byiki.exe</a>
 
-          <a href="#contacto" class="nav-cta">
+          <a href="#contacto" class="nav-cta" aria-label="Contacto">
             Contacto ↗
           </a>
 
@@ -67,9 +73,7 @@
       </div>
     </header>
 
-
-
-    <main id="top">
+    <main id="top" tabindex="-1">
 
       <section class="hero" aria-labelledby="hero-title">
         <div class="container hero-container">
@@ -170,14 +174,13 @@
         </div>
       </section>
 
-
       <section id="productos" class="products-section" aria-labelledby="products-title">
 
         <div class="container">
 
-          <div class="products-header">
+          <div class="section-header">
 
-            <div class="products-meta">
+            <div class="section-meta">
               <span>01 / Software &amp; Products</span>
               <span>[ 02 Projects ]</span>
             </div>
@@ -186,7 +189,7 @@
               Software con propósito<span>.</span>
             </h2>
 
-            <p class="products-description">
+            <p class="section-header__description">
               Herramientas independientes que nacen
               de problemas reales, la curiosidad
               y las ganas de construir algo útil.
@@ -194,63 +197,61 @@
 
           </div>
 
-
           <div class="products-grid">
 
             <!-- VESTIGIA -->
-            <article class="product-card">
+            <article class="project-card product-card">
 
-              <div class="product-preview product-preview--vestigia">
+              <div class="project-card__preview product-preview product-preview--vestigia">
 
-                <img src="assets/images/products/vestigia/preview.png"
+                <img src="assets/images/products/vestigia/preview.webp"
                   alt="Interfaz del analizador de salud de Vestigia" loading="lazy" width="1200" height="800">
 
               </div>
 
-              <div class="product-content">
+              <div class="project-card__content product-content">
 
-                <span class="product-category">
+                <span class="project-card__category">
                   Obsidian Plugin
                 </span>
 
-                <h3 class="product-name">Vestigia</h3>
+                <h3 class="project-card__name product-name">Vestigia</h3>
 
-                <p class="product-description">
+                <p class="project-card__description product-description">
                   Analiza la salud estructural de tu vault de
                   Obsidian. Detecta enlaces rotos, notas huérfanas
                   y problemas de organización.
                 </p>
 
-                <ul class="product-tags" aria-label="Tecnologías">
+                <ul class="project-card__tags" aria-label="Tecnologías">
                   <li>TypeScript</li>
                   <li>Obsidian API</li>
                   <li>Open Source</li>
                 </ul>
 
+                <div class="project-card__footer">
 
-                <div class="product-footer">
-
-                  <span class="product-status product-status--available">
-                    <span class="product-status-dot" aria-hidden="true"></span>
+                  <span class="project-card__status project-card__status--available">
+                    <span class="project-card__status-dot" aria-hidden="true"></span>
                     Disponible
                   </span>
 
-                  <div class="product-links">
+                  <div class="project-card__links">
 
                     <a href="https://community.obsidian.md/plugins/vestigia"
-                      class="product-external-link product-external-link--primary" target="_blank"
+                      class="project-card__external-link project-card__external-link--primary" target="_blank"
                       rel="noopener noreferrer" aria-label="Vestigia en Obsidian">
                       Obsidian
                       <span aria-hidden="true">↗</span>
                     </a>
 
-                    <a href="https://github.com/byikiexe/vestigia" class="product-external-link" target="_blank"
+                    <a href="https://github.com/byikiexe/vestigia" class="project-card__external-link" target="_blank"
                       rel="noopener noreferrer" aria-label="Repositorio de Vestigia en GitHub">
                       GitHub
                       <span aria-hidden="true">↗</span>
                     </a>
 
-                    <a href="https://hub.xerj.org/contributors/byikiexe" class="product-external-link" target="_blank"
+                    <a href="https://hub.xerj.org/contributors/byikiexe" class="project-card__external-link" target="_blank"
                       rel="noopener noreferrer" aria-label="Perfil de contribuciones en XERJ">
                       XERJ
                       <span aria-hidden="true">↗</span>
@@ -260,56 +261,55 @@
 
                 </div>
 
-
               </div>
 
             </article>
 
             <!-- GINSENG -->
-            <article class="product-card">
+            <article class="project-card product-card">
 
-              <div class="product-preview product-preview--ginseng">
+              <div class="project-card__preview product-preview product-preview--ginseng">
 
-                <img src="assets/images/products/ginseng/preview.png"
+                <img src="assets/images/products/ginseng/preview.webp"
                   alt="Interfaz de la aplicación de escritorio Ginseng" loading="lazy" width="1200" height="800">
               </div>
-              <div class="product-content">
-                <span class="product-category">
+              <div class="project-card__content product-content">
+                <span class="project-card__category">
                   Desktop Application
                 </span>
-                <h3 class="product-name">Ginseng</h3>
-                <p class="product-description">
+                <h3 class="project-card__name product-name">Ginseng</h3>
+                <p class="project-card__description product-description">
                   Una utilidad de escritorio ligera para evitar
                   el bloqueo automático por inactividad y mantener
                   tu equipo activo cuando lo necesites.
                 </p>
-                <ul class="product-tags" aria-label="Tecnologías y licencia">
+                <ul class="project-card__tags" aria-label="Tecnologías y licencia">
                   <li>Tauri</li>
                   <li>Rust</li>
                   <li>Vue</li>
                   <li>TypeScript</li>
                   <li>Proprietary</li>
                 </ul>
-                <div class="product-footer">
-                  <div class="product-status-group">
-                    <span class="product-status product-status--available">
-                      <span class="product-status-dot" aria-hidden="true"></span>
+                <div class="project-card__footer">
+                  <div class="project-card__status-group">
+                    <span class="project-card__status project-card__status--available">
+                      <span class="project-card__status-dot" aria-hidden="true"></span>
                       Disponible
                     </span>
-                    <span class="product-status product-status--review">
-                      <span class="product-status-dot" aria-hidden="true"></span>
+                    <span class="project-card__status project-card__status--review">
+                      <span class="project-card__status-dot" aria-hidden="true"></span>
                       Snap Store en revisión
                     </span>
                   </div>
-                  <div class="product-links">
+                  <div class="project-card__links">
                     <a href="https://github.com/byikiexe/ginseng-releases/releases/latest"
-                      class="product-external-link product-external-link--primary" target="_blank"
+                      class="project-card__external-link project-card__external-link--primary" target="_blank"
                       rel="noopener noreferrer">
                       Descargar para Linux
                       <span aria-hidden="true">↗</span>
                     </a>
                     <a href="https://github.com/byikiexe/ginseng-releases/blob/main/CHANGELOG.md"
-                      class="product-external-link" target="_blank" rel="noopener noreferrer">
+                      class="project-card__external-link" target="_blank" rel="noopener noreferrer">
                       Changelog
                       <span aria-hidden="true">↗</span>
                     </a>
@@ -321,14 +321,13 @@
         </div>
       </section>
 
-
       <section id="experimentos" class="experiments-section" aria-labelledby="experiments-title">
 
         <div class="container">
 
-          <div class="experiments-header">
+          <div class="section-header">
 
-            <div class="experiments-meta">
+            <div class="section-meta">
               <span>02 / Creative Experiments</span>
               <span>[ 01 Experiment ]</span>
             </div>
@@ -337,7 +336,7 @@
               Explorando lo inesperado<span>.</span>
             </h2>
 
-            <p class="experiments-description">
+            <p class="section-header__description">
               Un espacio de experimentación en la
               intersección entre código, diseño
               y creatividad.
@@ -347,43 +346,43 @@
 
           <div class="experiments-grid">
             <!-- AURA -->
-            <article class="experiment-card">
-              <div class="experiment-preview">
-                <img src="assets/images/experiments/aura/preview.png"
+            <article class="project-card experiment-card">
+              <div class="project-card__preview experiment-preview">
+                <img src="assets/images/experiments/aura/preview.webp"
                   alt="Composición visual generativa creada con Aura" loading="lazy" width="1200" height="800">
               </div>
-              <div class="experiment-content">
+              <div class="project-card__content experiment-content">
                 <span class="experiment-index">
                   Experiment / 001
                 </span>
-                <span class="product-category">
+                <span class="project-card__category">
                   Generative Art
                 </span>
-                <h3 class="experiment-name">Aura</h3>
-                <p class="experiment-description">
+                <h3 class="project-card__name experiment-name">Aura</h3>
+                <p class="project-card__description experiment-description">
                   Un experimento de arte generativo
                   que transforma palabras en composiciones
                   visuales deterministas. Una exploración
                   de la relación entre lenguaje,
                   algoritmos y expresión visual.
                 </p>
-                <ul class="product-tags" aria-label="Áreas de experimentación">
+                <ul class="project-card__tags" aria-label="Áreas de experimentación">
                   <li>Creative Coding</li>
                   <li>Generative Art</li>
                   <li>Algorithms</li>
                 </ul>
 
-                <div class="product-footer">
-                  <span class="product-status product-status--available">
-                    <span class="product-status-dot" aria-hidden="true"></span>
+                <div class="project-card__footer">
+                  <span class="project-card__status project-card__status--available">
+                    <span class="project-card__status-dot" aria-hidden="true"></span>
                     Disponible
                   </span>
-                  <div class="product-links">
-                    <a href="https://aura.byikiexe.com/" class="product-external-link product-external-link--primary"
+                  <div class="project-card__links">
+                    <a href="https://aura.byikiexe.com/" class="project-card__external-link project-card__external-link--primary"
                       target="_blank" rel="noopener noreferrer"> Experimentar
                       <span aria-hidden="true">↗</span>
                     </a>
-                    <a href="https://github.com/byikiexe/aura-experiment" class="product-external-link" target="_blank"
+                    <a href="https://github.com/byikiexe/aura-experiment" class="project-card__external-link" target="_blank"
                       rel="noopener noreferrer">
                       GitHub
                       <span aria-hidden="true">↗</span>
@@ -396,15 +395,13 @@
         </div>
       </section>
 
-
-
       <section id="servicios" class="services-section" aria-labelledby="services-title">
 
         <div class="container">
 
-          <div class="services-header">
+          <div class="section-header section-header--wide">
 
-            <div class="services-meta">
+            <div class="section-meta">
               <span>03 / Technical Services</span>
               <span>[ 04 Capabilities ]</span>
             </div>
@@ -413,7 +410,7 @@
               Del código a la infraestructura<span>.</span>
             </h2>
 
-            <p class="services-description">
+            <p class="section-header__description">
               Soluciones técnicas diseñadas para funcionar,
               evolucionar y mantenerse en el tiempo.
             </p>
@@ -431,7 +428,7 @@
                 <span class="capability-symbol" aria-hidden="true">&lt;/&gt;</span>
               </div>
 
-              <h3>Software Engineering</h3>
+              <h3 lang="en">Software Engineering</h3>
 
               <p>
                 Desarrollo de aplicaciones web, herramientas
@@ -455,7 +452,7 @@
                 <span class="capability-symbol" aria-hidden="true">{ }</span>
               </div>
 
-              <h3>Backend &amp; Integrations</h3>
+              <h3 lang="en">Backend &amp; Integrations</h3>
 
               <p>
                 Desarrollo de servicios backend, APIs,
@@ -478,7 +475,7 @@
                 <span class="capability-symbol" aria-hidden="true">$_</span>
               </div>
 
-              <h3>Infrastructure &amp; DevOps</h3>
+              <h3 lang="en">Infrastructure &amp; DevOps</h3>
 
               <p>
                 Gestión de infraestructura Linux,
@@ -501,7 +498,7 @@
                 <span class="capability-symbol" aria-hidden="true">[ * ]</span>
               </div>
 
-              <h3>Automation &amp; Tooling</h3>
+              <h3 lang="en">Automation &amp; Tooling</h3>
 
               <p>
                 Automatización de procesos, scripting
@@ -536,12 +533,11 @@
 
       </section>
 
-
       <section id="sobre" class="about-section" aria-labelledby="about-title">
 
         <div class="container">
 
-          <div class="about-meta">
+          <div class="section-meta about-meta">
             <span>04 / About the Studio</span>
             <span>[ Independent by Design ]</span>
           </div>
@@ -597,7 +593,7 @@
 
             <article class="about-principle">
               <span class="principle-index">/ 01</span>
-              <h3>Independence</h3>
+              <h3 lang="en">Independence</h3>
               <p>
                 Libertad para explorar, experimentar
                 y construir ideas propias.
@@ -606,7 +602,7 @@
 
             <article class="about-principle">
               <span class="principle-index">/ 02</span>
-              <h3>Purpose</h3>
+              <h3 lang="en">Purpose</h3>
               <p>
                 Tecnología con una razón de ser.
                 Funcionalidad antes que complejidad.
@@ -615,7 +611,7 @@
 
             <article class="about-principle">
               <span class="principle-index">/ 03</span>
-              <h3>Evolution</h3>
+              <h3 lang="en">Evolution</h3>
               <p>
                 Aprendizaje constante, iteración
                 y mejora continua.
@@ -633,139 +629,132 @@
 
       </section>
 
+      <section id="contacto" class="contact-section" aria-labelledby="contact-title">
 
+        <div class="container">
 
-      
-<section id="contacto"
-         class="contact-section"
-         aria-labelledby="contact-title">
-
-    <div class="container">
-
-        <div class="contact-meta">
+          <div class="section-meta contact-meta">
             <span>05 / Contact</span>
             <span>[ Open Channel ]</span>
-        </div>
+          </div>
 
-        <div class="contact-grid">
+          <div class="contact-grid">
 
             <div class="contact-heading">
 
-                <h2 id="contact-title">
-                    Let's talk<span>.</span>
-                </h2>
+              <h2 id="contact-title" lang="en">
+                Let's talk<span>.</span>
+              </h2>
 
-                <p>
-                    Para proyectos, colaboraciones o cualquier
-                    idea que quieras explorar.
-                </p>
+              <p>
+                Para proyectos, colaboraciones o cualquier
+                idea que quieras explorar.
+              </p>
 
             </div>
 
             <div class="contact-details">
 
-                <div class="contact-direct">
+              <div class="contact-direct">
 
-                    <span class="contact-label">
-                        Email / Direct
-                    </span>
+                <span class="contact-label">
+                  Email / Direct
+                </span>
 
-                    <a href="mailto:contacto@byikiexe.com"
-                       class="contact-email">
+                <a href="mailto:contacto@byikiexe.com"
+                   class="contact-email">
 
-                        <span>contacto@byikiexe.com</span>
-                        <span aria-hidden="true">↗</span>
+                  <span>contacto@byikiexe.com</span>
+                  <span aria-hidden="true">↗</span>
 
-                    </a>
+                </a>
 
-                </div>
+              </div>
 
-                <div class="contact-socials">
+              <div class="contact-socials">
 
-                    <span class="contact-label">
-                        Elsewhere / Online
-                    </span>
+                <span class="contact-label">
+                  Elsewhere / Online
+                </span>
 
-                    <div class="contact-social-links">
+                <div class="contact-social-links">
 
-                        <a href="https://github.com/byikiexe"
-                           target="_blank"
-                           rel="noopener noreferrer">
-                            GitHub ↗
-                        </a>
+                  <a href="https://github.com/byikiexe"
+                     target="_blank"
+                     rel="noopener noreferrer">
+                    GitHub ↗
+                  </a>
 
-                        <a href="https://www.instagram.com/vnuoli/"
-                           target="_blank"
-                           rel="noopener noreferrer">
-                            Instagram ↗
-                        </a>
-
-                    </div>
+                  <a href="https://www.instagram.com/vnuoli/"
+                     target="_blank"
+                     rel="noopener noreferrer">
+                    Instagram ↗
+                  </a>
 
                 </div>
+
+              </div>
 
             </div>
+
+          </div>
 
         </div>
 
-    </div>
-
-</section>
-
+      </section>
 
     </main>
 
-    
-<footer class="site-footer">
+    <footer class="site-footer">
 
-    <div class="container">
+      <div class="container">
 
         <div class="footer-main">
 
-            <!-- Studio identity -->
+          <!-- Studio identity -->
 
-            <div class="footer-identity">
+          <div class="footer-identity">
 
-                <a href="#top"
-                   class="brand"
-                   aria-label="byiki.exe — Inicio">
-                    byiki<span class="brand-highlight">.exe</span>
-                </a>
+            <a href="#top"
+               class="brand"
+               aria-label="byiki.exe — Inicio">
+              byiki<span class="brand-highlight">.exe</span>
+            </a>
 
-                <p>Independent Software Studio</p>
+            <p>Independent Software Studio</p>
 
-            </div>
+          </div>
 
-            <!-- System information -->
+          <!-- System information -->
 
-            <div class="footer-system">
+          <div class="footer-system">
 
-                <span class="footer-status">
-                    <span class="footer-status-dot"
-                          aria-hidden="true"></span>
-                    System online
-                </span>
+            <span class="footer-status">
+              <span class="footer-status-dot"
+                  aria-hidden="true"></span>
+              System online
+            </span>
 
-                <span class="footer-build">
-                    Build / 002
-                </span>
+            <span class="footer-build">
+              Build / 002
+            </span>
 
-            </div>
+          </div>
 
-            <!-- Navigation and copyright -->
+          <!-- Navigation and copyright -->
 
-            <div class="footer-navigation">
+          <div class="footer-navigation">
 
-                <a href="#top" class="footer-top">
-                    Back to top
-                    <span aria-hidden="true">↑</span>
-                </a>
+                <a href="#top" class="footer-top" lang="en">
+              Back to top
+              <span aria-hidden="true">↑</span>
+            </a>
 
-                <span class="footer-copyright">
-                    © 2026 byiki.exe
-                </span>
+            <span class="footer-copyright">
+              © 2026 byiki.exe
+            </span>
 
-            </div>
+          </div>
 
         </div>
 
@@ -773,19 +762,19 @@
 
         <div class="footer-bottom">
 
-            <span>
-                Designed &amp; developed by byiki.exe
-            </span>
+          <span>
+            Designed &amp; developed by byiki.exe
+          </span>
 
-            <span class="footer-eof" aria-hidden="true">
-                EOF_
-            </span>
+          <span class="footer-eof" aria-hidden="true">
+            EOF_
+          </span>
 
         </div>
 
-    </div>
+      </div>
 
-</footer>
+    </footer>
 
   </div>
   <script defer src="assets/js/navigation.js"></script>

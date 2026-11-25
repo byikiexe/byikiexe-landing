@@ -8,50 +8,6 @@
 }
 
 
-/* Section header */
-
-.services-header {
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-4);
-    margin-bottom: var(--space-8);
-}
-
-.services-meta {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: var(--space-4);
-
-    font-family: var(--font-mono);
-    font-size: var(--text-xs);
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    color: var(--color-text-muted);
-}
-
-.services-meta span:first-child {
-    color: var(--color-accent);
-}
-
-.services-header h2 {
-    font-family: var(--font-heading);
-    font-size: clamp(2rem, 4vw, 3.5rem);
-    font-weight: var(--font-semibold);
-    letter-spacing: -0.045em;
-}
-
-.services-header h2 span {
-    color: var(--color-accent);
-}
-
-.services-description {
-    max-width: 700px;
-    font-size: var(--text-lg);
-    color: var(--color-text-secondary);
-}
-
-
 /* Capabilities grid */
 
 .capabilities-grid {
@@ -174,14 +130,6 @@
 
 @media (max-width: 768px) {
 
-    .services-header {
-        margin-bottom: var(--space-6);
-    }
-
-    .services-description {
-        font-size: var(--text-base);
-    }
-
     .capabilities-grid {
         grid-template-columns: minmax(0, 1fr);
     }
@@ -201,10 +149,6 @@
 
     .capability-card {
         padding: var(--space-4);
-    }
-
-    .services-meta {
-        font-size: 0.65rem;
     }
 
 }

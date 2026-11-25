@@ -42,10 +42,10 @@ if (navToggle && mainNavigation) {
         }
     });
 
-    const desktopMedia = window.matchMedia('(min-width: 769px)');
+    const mobileMedia = window.matchMedia('(max-width: 768px)');
 
-    desktopMedia.addEventListener('change', event => {
-        if (event.matches) {
+    mobileMedia.addEventListener('change', event => {
+        if (!event.matches) {
             setMenuState(false);
         }
     });
