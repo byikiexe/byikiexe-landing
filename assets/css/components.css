@@ -64,6 +64,9 @@
 }
 
 .nav-links a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 24px;
     font-family: var(--font-mono);
     font-size: var(--text-xs);
     font-weight: var(--font-medium);
@@ -115,7 +118,8 @@
     transition: border-color var(--transition-fast);
 }
 
-.nav-toggle:hover {
+.nav-toggle:hover,
+.nav-toggle:active {
     border-color: var(--color-accent);
 }
 
@@ -142,7 +146,6 @@
 @media (max-width: 768px) {
 
     .nav {
-        min-height: 72px;
         flex-direction: row;
         align-items: center;
         justify-content: space-between;
@@ -159,6 +162,9 @@
         top: 100%;
         left: 0;
         right: 0;
+        max-height: calc(100dvh - var(--header-height));
+        overflow-y: auto;
+        scroll-padding-block: var(--space-2);
         flex-direction: column;
         align-items: stretch;
         gap: 0;
@@ -338,7 +344,8 @@
         color var(--transition-fast);
 }
 
-.project-card__external-link:hover {
+.project-card__external-link:hover,
+.project-card__external-link:active {
     border-color: var(--color-accent-secondary);
     color: var(--color-accent-secondary);
 }
@@ -351,7 +358,8 @@
     color: var(--color-on-accent);
 }
 
-.project-card__external-link--primary:hover {
+.project-card__external-link--primary:hover,
+.project-card__external-link--primary:active {
     background: var(--color-accent-hover);
     border-color: var(--color-accent-hover);
     color: var(--color-on-accent);
@@ -394,7 +402,8 @@
     color: var(--color-on-accent);
 }
 
-.btn-primary:hover {
+.btn-primary:hover,
+.btn-primary:active {
     background-color: var(--color-accent-hover);
     border-color: var(--color-accent-hover);
 }
@@ -405,7 +414,8 @@
     border: 1px solid var(--color-accent-secondary);
 }
 
-.btn-secondary:hover {
+.btn-secondary:hover,
+.btn-secondary:active {
     background: var(--color-accent-secondary);
     color: var(--color-on-accent);
 }

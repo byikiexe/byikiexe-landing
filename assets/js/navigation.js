@@ -32,6 +32,16 @@ if (navToggle && mainNavigation) {
         });
     });
 
+    document.addEventListener('focusin', event => {
+        if (
+            navToggle.getAttribute('aria-expanded') === 'true' &&
+            event.target !== navToggle &&
+            !mainNavigation.contains(event.target)
+        ) {
+            setMenuState(false);
+        }
+    });
+
     document.addEventListener('keydown', event => {
         if (
             event.key === 'Escape' &&

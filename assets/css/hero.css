@@ -195,7 +195,7 @@
 }
 
 .terminal-cursor {
-    animation: cursor-blink 1.2s step-end infinite;
+    animation: cursor-blink 1.2s step-end 3;
 }
 
 @keyframes cursor-blink {
@@ -214,6 +214,7 @@
 .scroll-indicator {
     display: inline-flex;
     align-items: center;
+    min-height: 24px;
     gap: var(--space-2);
     transition: color var(--transition-fast);
 }
@@ -232,12 +233,6 @@
 
     .hero-terminal {
         max-width: 560px;
-    }
-}
-
-@media (max-width: 768px) {
-    .hero {
-        min-height: calc(100svh - 72px);
     }
 }
 
