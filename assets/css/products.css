@@ -116,22 +116,6 @@
     transform: scale(1.025);
 }
 
-.product-preview-meta {
-    position: absolute;
-    top: var(--space-4);
-    left: var(--space-4);
-    right: var(--space-4);
-    z-index: var(--z-base);
-
-    display: flex;
-    justify-content: space-between;
-
-    font-family: var(--font-mono);
-    font-size: var(--text-xs);
-    color: var(--color-text-secondary);
-}
-
-
 /* Product information */
 
 .product-content {
@@ -342,12 +326,6 @@ a.product-link:hover {
 
     .product-name {
         font-size: var(--text-2xl);
-    }
-
-    .product-preview-meta {
-        top: var(--space-3);
-        left: var(--space-3);
-        right: var(--space-3);
     }
 
 }

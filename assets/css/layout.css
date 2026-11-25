@@ -12,3 +12,7 @@
 .section {
     padding-block: var(--section-spacing);
 }
+
+.page {
+    min-height: 100vh;
+}
